@@ -7,6 +7,7 @@ urlpatterns = [
     path('', views.ProfileListView, name='profile_list'),
     path('<int:profile_id>', views.ProfileDetailView, name='profile_detail'),
     path('<int:profile_id>/delete', views.ProfileDeleteView, name='profile_delete'),
+    path('<int:profile_id>/update', views.ProfileUpdateView, name='profile_update'),
     path('contact', views.ContactView, name='contact'),
     path('new_profile', views.NewProfileView, name='new_profile'),
 

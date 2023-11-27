@@ -29,9 +29,10 @@
                                 <strong>Sect:</strong> {{ profile.sect }}<br>
                                 <strong>Caste:</strong> {{ profile.caste }}<br>
                                 <strong>Father's Name:</strong> {{ profile.father.name }}<br>
-                                <strong>Father's Occupation:</strong> {{ profile.father.occupation }}<br>
-                                </p>
+                                <strong>Father's Occupation:</strong> {{ profile.father.occupation }}<br></p>
                                 <a href="{% url 'matrimony:profile_list' %}" class="btn btn-primary">Back</a>
+                                <a href="{% url 'matrimony:profile_update' profile.id %}"
+                                   class="btn btn-warning">Update</a>
                                 <a href="{% url 'matrimony:profile_delete' profile.id %}"
                                    class="btn btn-danger">Delete</a>
                             </div>

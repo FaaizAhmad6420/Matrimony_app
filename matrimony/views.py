@@ -46,3 +46,19 @@ def NewProfileView(request):
     else:
         form = ProfileForm()
     return render(request, 'matrimony/new_profile.html', {'form': form})
+
+
+@login_required
+def ProfileUpdateView(request, profile_id):
+
+    profile = Profile.objects.get(id=profile_id)
+    if request.method == "POST":
+        form = ProfileForm(request.POST, request.FILES, instance=profile)
+
+        if form.is_valid():
+            form.save()
+
+            return redirect('matrimony:profile_list')
+    else:
+        form = ProfileForm(instance=profile)
+    return render(request, 'matrimony/new_profile.html', {'form': form})
